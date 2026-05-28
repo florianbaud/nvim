@@ -4,7 +4,8 @@ local options = {
     css = { "prettier" },
     -- html = { "prettier" },
     python = { "ruff_format" },
-    json = { "prettier" },
+    json = { "jq" },
+    jsonc = { "jq" },
   },
 
   -- format_on_save = {
