@@ -19,4 +19,3 @@ vim.g.clipboard = {
 
 -- vimtex configuration
 -- vim.g.vimtex_compiler_method = 'latexrun'
-
