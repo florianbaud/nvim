@@ -16,3 +16,7 @@ vim.g.clipboard = {
 
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
+
+-- vimtex configuration
+-- vim.g.vimtex_compiler_method = 'latexrun'
+
