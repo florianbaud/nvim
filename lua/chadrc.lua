@@ -6,19 +6,24 @@
 local M = {}
 
 M.base46 = {
-  theme = "onedark",
+  theme = "rxyhn",
 
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
+  hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  },
 }
 
 M.nvdash = { load_on_startup = true }
 
 M.ui = {
   statusline = {
-    theme = "vscode_colored",
+    theme = "default",
+    separator_style = "arrow",
+    order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
+    modules = {
+      f = "%F",
+    },
   },
   tabufline = {
     lazyload = false,
