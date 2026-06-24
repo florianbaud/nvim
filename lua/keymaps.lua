@@ -36,6 +36,14 @@ vim.keymap.set("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true, desc =
 
 vim.keymap.set("n", "<leader>re", "<cmd>restart<cr>", { desc = "Restart config :restart)" })
 
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Quit terminal mode" })
+
+vim.keymap.set("n", "<Tab>", "]b", { desc = "Switch tab right", remap = true })
+vim.keymap.set("n", "<S-Tab>", "[b", { desc = "Switch tab left", remap = true })
+
+vim.keymap.set("n", "<M-h>", "<cmd>hor te<CR><cmd>res 15<CR>i")
+vim.keymap.set("n", "<M-v>", "<cmd>vert te<CR>i")
+
 -- native undotree
 vim.keymap.set("n", "<leader>u", function()
   vim.cmd.packadd "nvim.undotree"
