@@ -22,10 +22,22 @@ vim.lsp.config("lua_ls", {
 vim.lsp.config("ruff", {
   init_options = {
     settings = {
+      lint = { enable = false },
       logLevel = "debug",
     },
   },
   filetypes = { "python" },
+})
+
+vim.lsp.config("ty", {
+  settings = {
+    ty = {
+      diagnosticMode = "workspace",
+      completions = {
+        completeFunctionParentheses = true,
+      },
+    },
+  },
 })
 
 vim.lsp.enable {
