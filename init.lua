@@ -7,6 +7,7 @@ require("pack")
 require("treesitter")
 require("lsp")
 require("session")
+require("autocmd")
 require("kanagawa")
 
 -- vim.cmd.colorscheme("moonfly")
