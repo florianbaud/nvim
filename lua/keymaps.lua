@@ -41,8 +41,8 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Quit terminal mode" })
 vim.keymap.set("n", "<Tab>", "]b", { desc = "Switch tab right", remap = true })
 vim.keymap.set("n", "<S-Tab>", "[b", { desc = "Switch tab left", remap = true })
 
-vim.keymap.set("n", "<M-h>", "<cmd>hor te<CR><cmd>res 15<CR>i")
-vim.keymap.set("n", "<M-v>", "<cmd>vert te<CR>i")
+vim.keymap.set("n", "<M-h>", "<cmd>hor te<CR><cmd>res 15<CR>", { desc = "Open horizontal terminal" })
+vim.keymap.set("n", "<M-v>", "<cmd>vert te<CR>", { desc = "Open vertical terminal" })
 
 -- native undotree
 vim.keymap.set("n", "<leader>u", function()
