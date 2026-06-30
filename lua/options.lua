@@ -21,14 +21,14 @@ vim.opt.laststatus = 3
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir"
+vim.opt.undodir = vim.fn.stdpath "data" .. "/undodir"
 vim.opt.undofile = true
 
 vim.opt.completeopt = "menuone,longest,noinsert"
 vim.opt.pummaxwidth = 100
-vim.opt.shortmess:append("c")
-vim.opt.clipboard:append("unnamedplus")
-vim.opt.isfname:append("@-@")
+vim.opt.shortmess:append "c"
+vim.opt.clipboard:append "unnamedplus"
+vim.opt.isfname:append "@-@"
 -- vim.opt.guicursor = ""
 vim.opt.scrolloff = 8
 vim.opt.cmdheight = 1
