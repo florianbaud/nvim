@@ -8,6 +8,22 @@ vim.pack.add {
   "https://github.com/tpope/vim-fugitive",
   "https://github.com/rebelot/kanagawa.nvim",
   "https://github.com/danymat/neogen",
+  "https://github.com/yetone/avante.nvim",
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/MunifTanjim/nui.nvim",
+}
+
+--- Avante (Transform Nvim to a Cursor like IDE) ---
+require("avante").setup {
+  acp_providers = {
+    ["mistral-vibe"] = {
+      command = "vibe-acp",
+      env = {
+        MISTRAL_API_KEY = os.getenv "MISTRAL_API_KEY", -- necessary if you setup Mistral Vibe manually
+      },
+    },
+  },
+  provider = "mistral-vibe",
 }
 
 --- Neogen (docstring generator) ---
