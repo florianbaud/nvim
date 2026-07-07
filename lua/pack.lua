@@ -43,16 +43,61 @@ require("codecompanion").setup {
         })
       end,
     },
+    acp = {
+      custom_mistral_vibe = function()
+        local helpers = require "codecompanion.adapters.acp.helpers"
+        return {
+          name = "custom_mistral_vibe",
+          formatted_name = "CustomMistralVibe",
+          type = "acp",
+          roles = {
+            llm = "assistant",
+            user = "user",
+          },
+          commands = {
+            default = {
+              "vibe-acp",
+            },
+          },
+          defaults = {
+            mcpServers = {},
+            timeout = 20000, -- 20 seconds
+          },
+          parameters = {
+            protocolVersion = 1,
+            clientCapabilities = {
+              fs = { readTextFile = true, writeTextFile = true },
+            },
+            clientInfo = {
+              name = "CodeCompanion.nvim",
+              version = "1.0.0",
+            },
+          },
+          handlers = {
+            setup = function(self)
+              return true
+            end,
+            auth = function(self)
+              return true
+            end,
+            form_messages = function(self, messages, capabilities)
+              return helpers.form_messages(self, messages, capabilities)
+            end,
+            on_exit = function(self, code) end,
+          },
+        }
+      end,
+    },
   },
   interactions = {
     chat = {
-      adapter = "llama.cpp",
+      adapter = "custom_mistral_vibe",
     },
     inline = {
-      adapter = "llama.cpp",
+      adapter = "custom_mistral_vibe",
     },
     cmd = {
-      adapter = "llama.cpp",
+      adapter = "custom_mistral_vibe",
     },
   },
   -- NOTE: The log_level is in `opts.opts`
