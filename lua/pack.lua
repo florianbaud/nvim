@@ -7,6 +7,12 @@ vim.pack.add {
   "https://github.com/mason-org/mason.nvim",
   "https://github.com/tpope/vim-fugitive",
   "https://github.com/rebelot/kanagawa.nvim",
+  "https://github.com/danymat/neogen",
+}
+
+--- Neogen (docstring generator) ---
+require("neogen").setup {
+  enable = true,
 }
 
 --- mini icons ---
