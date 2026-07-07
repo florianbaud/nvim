@@ -7,6 +7,58 @@ vim.pack.add {
   "https://github.com/mason-org/mason.nvim",
   "https://github.com/tpope/vim-fugitive",
   "https://github.com/rebelot/kanagawa.nvim",
+  "https://www.github.com/nvim-lua/plenary.nvim",
+  {
+    src = "https://www.github.com/olimorris/codecompanion.nvim",
+    version = vim.version.range "^19.0.0",
+  },
+  "https://github.com/danymat/neogen",
+}
+
+--- Neogen (docstring generator) ---
+require("neogen").setup { enable = true }
+
+--- code companion ---
+require("codecompanion").setup {
+  adapters = {
+    http = {
+      ["llama.cpp"] = function()
+        return require("codecompanion.adapters").extend("openai_compatible", {
+          env = {
+            url = "http://127.0.0.1:8000", -- replace with your llama.cpp instance
+            chat_url = "/v1/chat/completions",
+          },
+          handlers = {
+            parse_message_meta = function(self, data)
+              local extra = data.extra
+              if extra and extra.reasoning_content then
+                data.output.reasoning = { content = extra.reasoning_content }
+                if data.output.content == "" then
+                  data.output.content = nil
+                end
+              end
+              return data
+            end,
+          },
+        })
+      end,
+    },
+  },
+  interactions = {
+    chat = {
+      adapter = "llama.cpp",
+    },
+    inline = {
+      adapter = "llama.cpp",
+    },
+    cmd = {
+      adapter = "llama.cpp",
+    },
+  },
+  -- NOTE: The log_level is in `opts.opts`
+  opts = {
+    log_level = "DEBUG",
+  },
 }
 
 --- mini icons ---
