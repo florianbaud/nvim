@@ -44,6 +44,8 @@ vim.keymap.set("n", "<S-Tab>", "[b", { desc = "Switch tab left", remap = true })
 vim.keymap.set("n", "<M-h>", "<cmd>hor te<CR><cmd>res 15<CR>", { desc = "Open horizontal terminal" })
 vim.keymap.set("n", "<M-v>", "<cmd>vert te<CR>", { desc = "Open vertical terminal" })
 
+vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Saving the buffer" })
+
 -- native undotree
 vim.keymap.set("n", "<leader>u", function()
   vim.cmd.packadd "nvim.undotree"
