@@ -33,7 +33,7 @@ vim.lsp.config("lua_ls", {
 vim.lsp.config("ruff", {
   init_options = {
     settings = {
-      lint = { enable = true},
+      lint = { enable = true },
       logLevel = "debug",
     },
   },
@@ -57,5 +57,5 @@ vim.lsp.enable {
   "ty",
   -- "basedpyright",
   -- "pyrefly",
-  "ruff", "rust_analyzer", "bashls"
+  "ruff", "rust_analyzer", "bashls", "biome",
 }
