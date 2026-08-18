@@ -11,6 +11,17 @@ capabilities = vim.tbl_deep_extend("force", capabilities, require("mini.completi
 
 vim.lsp.config("*", { capabilities = capabilities })
 
+-- vim.lsp.config("bashls", {
+--   cmd = { 'bash-language-server', 'start' },
+--   filetypes = { 'bash', 'sh' }
+-- })
+
+vim.lsp.config("rust_analyzer", {
+  settings = {
+    ['rust-analyzer'] = {},
+  },
+})
+
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
@@ -22,7 +33,7 @@ vim.lsp.config("lua_ls", {
 vim.lsp.config("ruff", {
   init_options = {
     settings = {
-      lint = { enable = false },
+      lint = { enable = true },
       logLevel = "debug",
     },
   },
@@ -46,5 +57,5 @@ vim.lsp.enable {
   "ty",
   -- "basedpyright",
   -- "pyrefly",
-  "ruff",
+  "ruff", "rust_analyzer", "bashls", "biome",
 }
