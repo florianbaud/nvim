@@ -51,10 +51,15 @@ vim.lsp.config("ty", {
   },
 })
 
+vim.lsp.config("tsc", {})
+
 vim.lsp.enable {
   "lua_ls",
   "stylua",
   "ty",
+  -- "tsc",
+  "vtsls",
+  "marksman",
   -- "basedpyright",
   -- "pyrefly",
   "ruff", "rust_analyzer", "bashls", "biome",
