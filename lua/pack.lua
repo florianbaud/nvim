@@ -15,8 +15,12 @@ require("neogen").setup {
   enable = true,
 }
 
+--- mini indent scope ---
+local MiniIndentScope = require "mini.indentscope"
+MiniIndentScope.setup()
+
 --- mini icons ---
-MiniIcons = require "mini.icons"
+local MiniIcons = require "mini.icons"
 MiniIcons.setup()
 MiniIcons.tweak_lsp_kind()
 
@@ -152,13 +156,13 @@ MiniStatusline.setup {
       local search = MiniStatusline.section_searchcount { trunc_width = 75 }
 
       return MiniStatusline.combine_groups {
-        { hl = mode_hl, strings = { mode } },
+        { hl = mode_hl,                 strings = { mode } },
         { hl = "MiniStatuslineDevinfo", strings = { git, diff, diagnostics, lsp } },
         "%<", -- Mark general truncate point
         { hl = "MiniStatuslineFilename", strings = { filename } },
         "%=", -- End left alignment
         { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
-        { hl = mode_hl, strings = { search, location } },
+        { hl = mode_hl,                  strings = { search, location } },
       }
     end,
   },
